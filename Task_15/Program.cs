@@ -9,13 +9,21 @@
 */
 
 Console.Clear();
-int n;
-Console.Write("Введите номер дня недели и программа подскажет,выходной ли этот день : ");
-while (!int.TryParse(Console.ReadLine(), out n)) // Проверка на ввод целого числа
+Console.WriteLine("Введите номер дня недели и мы скажем, является ли он выходным");
+int number = Convert.ToInt32(Console.ReadLine());
+
+
+if (number > 7)
 {
-    Console.Write("Ошибка ввода! Введите число: "); // сообщение, когда условие не выполняется
+    Console.WriteLine("Не может быть такого дня недели!");
+    Console.WriteLine("Введите цифру заново");
+    return;
 }
-if (n > 5 && n < 8)
-    Console.WriteLine("Ура, выходной!");
+
+if (number < 6)
+{
+    Console.WriteLine("Работай, сегодня не выходной");
+}
+
 else
-    Console.WriteLine("Работай, солнце еще высоко");
+    Console.WriteLine("Отдыхай, сегодня выходной");
